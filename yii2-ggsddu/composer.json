@@ -1,0 +1,21 @@
+{
+    "name": "helearn/yii2-ggsddu",
+    "description": "基于Yii2的在线学习系统",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "helearn",
+            "email": "helearn@aliyun.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "helearn\\ggsddu\\": ""
+        }
+    }
+}
