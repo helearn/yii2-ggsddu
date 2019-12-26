@@ -41,7 +41,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $defaultRoute = 'HlKnowledge';
+    public $defaultRoute = 'knowledge';
     /**
      * @var array Nav bar items.
      */
@@ -91,24 +91,11 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-        if (!isset(Yii::$app->i18n->translations['rbac-admin'])) {
-            Yii::$app->i18n->translations['rbac-admin'] = [
-                'class' => 'yii\i18n\PhpMessageSource',
-                'sourceLanguage' => 'en',
-                'basePath' => '@mdm/admin/messages',
-            ];
-        }
-
-        //user did not define the Navbar?
-        if ($this->navbar === null && Yii::$app instanceof \yii\web\Application) {
-            $this->navbar = [
-                ['label' => Yii::t('rbac-admin', 'Help'), 'url' => ['default/index']],
-                ['label' => Yii::t('rbac-admin', 'Application'), 'url' => Yii::$app->homeUrl],
-            ];
-        }
-        if (class_exists('yii\jui\JuiAsset')) {
-            Yii::$container->set('mdm\admin\AutocompleteAsset', 'yii\jui\JuiAsset');
-        }
+        
+        $this->basePath = '@helearn/ggsddu';
+       
+        //echo "string";
+        //exit();
     }
 
     /**

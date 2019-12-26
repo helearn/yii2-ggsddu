@@ -8,13 +8,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist helearn/ggsddu "*"
+php composer.phar require --prefer-dist helearn/yii2-ggsddu "*"
 ```
 
 or add
 
 ```
-"helearn/ggsddu": "*"
+"helearn/yii2-ggsddu": "*"
 ```
 
 to the require section of your `composer.json` file.
