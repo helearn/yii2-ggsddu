@@ -3,11 +3,11 @@
 namespace helearn\ggsddu\models;
 
 /**
- * This is the ActiveQuery class for [[TestPagerQuestionType]].
+ * This is the ActiveQuery class for [[KnowledgeQuestion]].
  *
- * @see TestPagerQuestionType
+ * @see KnowledgeQuestion
  */
-class TestPagerQuestionTypeQuery extends \yii\db\ActiveQuery
+class KnowledgeQuestionQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {
@@ -16,7 +16,7 @@ class TestPagerQuestionTypeQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return TestPagerQuestionType[]|array
+     * @return KnowledgeQuestion[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class TestPagerQuestionTypeQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return TestPagerQuestionType|array|null
+     * @return KnowledgeQuestion|array|null
      */
     public function one($db = null)
     {

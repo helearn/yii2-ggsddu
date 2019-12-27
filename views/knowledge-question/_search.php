@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model helearn\ggsddu\models\QuestionCompletionSearch */
+/* @var $model helearn\ggsddu\models\KnowledgeQuestionSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="question-completion-search">
+<div class="knowledge-question-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -20,23 +20,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'name') ?>
+    <?= $form->field($model, 'question_type') ?>
 
-    <?= $form->field($model, 'question_stem') ?>
+    <?= $form->field($model, 'question_id') ?>
 
-    <?= $form->field($model, 'correct_answer') ?>
-
-    <?= $form->field($model, 'answer_process') ?>
-
-    <?php // echo $form->field($model, 'status') ?>
-
-    <?php // echo $form->field($model, 'created_id') ?>
-
-    <?php // echo $form->field($model, 'updated_id') ?>
-
-    <?php // echo $form->field($model, 'oid') ?>
-
-    <?php // echo $form->field($model, 'uid') ?>
+    <?= $form->field($model, 'knowledge_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

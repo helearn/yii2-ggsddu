@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model helearn\ggsddu\models\QuestionReadStemSearch */
+/* @var $model helearn\ggsddu\models\QuestionReadSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-question-read-stem-search">
+<div class="question-read-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],

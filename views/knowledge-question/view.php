@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model helearn\ggsddu\models\QuestionEssay */
+/* @var $model helearn\ggsddu\models\KnowledgeQuestion */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Question Essays'), 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Knowledge Questions'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="question-essay-view">
+<div class="knowledge-question-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,15 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'name',
-            'question_stem',
-            'correct_answer',
-            'answer_process',
-            'status',
-            'created_id',
-            'updated_id',
-            'oid',
-            'uid',
+            'question_type',
+            'question_id',
+            'knowledge_id',
         ],
     ]) ?>
 

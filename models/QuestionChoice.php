@@ -16,7 +16,6 @@ use Yii;
  * @property int $option4 选项4
  * @property int $options 其他选项【以|#|分割每个选项】
  * @property int $correct_options 正确选项
- * @property int $knowledge_ids 相关知识点
  * @property int $answer_process 解答说明
  * @property int $is_multiple 是否多选题
  * @property int $status 状态【-1删除；0禁用；1启用】
@@ -41,9 +40,8 @@ class QuestionChoice extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'knowledge_ids', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'required'],
-            [['id', 'name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'knowledge_ids', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
-            [['id'], 'unique'],
+            [['name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'required'],
+            [['name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
         ];
     }
 
@@ -62,7 +60,6 @@ class QuestionChoice extends \yii\db\ActiveRecord
             'option4' => Yii::t('app', '选项4'),
             'options' => Yii::t('app', '其他选项【以|#|分割每个选项】'),
             'correct_options' => Yii::t('app', '正确选项'),
-            'knowledge_ids' => Yii::t('app', '相关知识点'),
             'answer_process' => Yii::t('app', '解答说明'),
             'is_multiple' => Yii::t('app', '是否多选题'),
             'status' => Yii::t('app', '状态【-1删除；0禁用；1启用】'),

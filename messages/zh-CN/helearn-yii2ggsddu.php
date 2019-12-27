@@ -17,6 +17,18 @@
  */
 return [
     'Knowledge' => '知识点',
+    'Question Essays' => '写作解答题',
+    'Question Completions' => '填空题',
+    'id' => 'ID',
+    'title' => '标题',
+    'name' => '名称',
+    'pid' => '父级id',
+    'level' => '级别',
+    'is_menu' => '是否菜单',
+    'sort' => '排序',
+    'status' => '状态（-1删除；0禁用；1启用）',
+    'created_at' => '创建时间',
+    'updated_at' => '修改时间',
     'Assignments' => '分配',
     'Users' => '用户列表',
     'User' => '用户',

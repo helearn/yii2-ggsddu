@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-knowledge-search">
+<div class="knowledge-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],

@@ -7,11 +7,11 @@ use yii\widgets\DetailView;
 /* @var $model helearn\ggsddu\models\QuestionCompletion */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Hl Question Completions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Question Completions'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="hl-question-completion-view">
+<div class="question-completion-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -34,7 +34,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'question_stem',
             'correct_answer',
             'answer_process',
-            'knowledge_ids',
             'status',
             'created_id',
             'updated_id',

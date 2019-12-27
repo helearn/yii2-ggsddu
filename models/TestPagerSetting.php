@@ -5,7 +5,7 @@ namespace helearn\ggsddu\models;
 use Yii;
 
 /**
- * This is the model class for table "{{%hl_test_pager_question_type}}".
+ * This is the model class for table "{{%hl_test_pager_setting}}".
  *
  * @property int $id
  * @property int $pid 试卷编号
@@ -14,14 +14,14 @@ use Yii;
  * @property int $sort 卷中排序
  * @property int $default_score 默认每题分值
  */
-class TestPagerQuestionType extends \yii\db\ActiveRecord
+class TestPagerSetting extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return '{{%hl_test_pager_question_type}}';
+        return '{{%hl_test_pager_setting}}';
     }
 
     /**
@@ -30,9 +30,8 @@ class TestPagerQuestionType extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'pid', 'type', 'title', 'sort', 'default_score'], 'required'],
-            [['id', 'pid', 'type', 'title', 'sort', 'default_score'], 'integer'],
-            [['id'], 'unique'],
+            [['pid', 'type', 'title', 'sort', 'default_score'], 'required'],
+            [['pid', 'type', 'title', 'sort', 'default_score'], 'integer'],
         ];
     }
 
@@ -53,10 +52,10 @@ class TestPagerQuestionType extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     * @return TestPagerQuestionTypeQuery the active query used by this AR class.
+     * @return TestPagerSettingQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new TestPagerQuestionTypeQuery(get_called_class());
+        return new TestPagerSettingQuery(get_called_class());
     }
 }

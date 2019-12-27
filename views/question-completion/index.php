@@ -7,15 +7,15 @@ use yii\widgets\Pjax;
 /* @var $searchModel helearn\ggsddu\models\QuestionCompletionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Hl Question Completions');
+$this->title = Yii::t('helearn-yii2ggsddu', 'Question Completions');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="hl-question-completion-index">
+<div class="question-completion-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Hl Question Completion'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Question Completion'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -32,7 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'question_stem',
             'correct_answer',
             'answer_process',
-            //'knowledge_ids',
             //'status',
             //'created_id',
             //'updated_id',

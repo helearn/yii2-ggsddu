@@ -4,15 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model helearn\ggsddu\models\TestPagerQuestionType */
+/* @var $model helearn\ggsddu\models\TestPagerSetting */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-test-pager-question-type-form">
+<div class="test-pager-setting-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'id')->textInput() ?>
 
     <?= $form->field($model, 'pid')->textInput() ?>
 

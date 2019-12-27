@@ -7,15 +7,15 @@ use yii\widgets\Pjax;
 /* @var $searchModel helearn\ggsddu\models\TestPagerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Hl Test Pagers');
+$this->title = Yii::t('app', 'Test Pagers');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="hl-test-pager-index">
+<div class="test-pager-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Hl Test Pager'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Test Pager'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>

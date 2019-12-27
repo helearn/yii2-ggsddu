@@ -35,8 +35,8 @@ class TestPager extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'title', 'explanation', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'required'],
-            [['id', 'name', 'title', 'explanation', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'integer'],
+            [['name', 'title', 'explanation', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'required'],
+            [['name', 'title', 'explanation', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'integer'],
         ];
     }
 

@@ -4,12 +4,12 @@ namespace helearn\ggsddu\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use helearn\ggsddu\models\TestPagerQuestionType;
+use helearn\ggsddu\models\TestPagerSetting;
 
 /**
- * TestPagerQuestionTypeSearch represents the model behind the search form of `helearn\ggsddu\models\TestPagerQuestionType`.
+ * TestPagerSettingSearch represents the model behind the search form of `helearn\ggsddu\models\TestPagerSetting`.
  */
-class TestPagerQuestionTypeSearch extends TestPagerQuestionType
+class TestPagerSettingSearch extends TestPagerSetting
 {
     /**
      * {@inheritdoc}
@@ -39,7 +39,7 @@ class TestPagerQuestionTypeSearch extends TestPagerQuestionType
      */
     public function search($params)
     {
-        $query = TestPagerQuestionType::find();
+        $query = TestPagerSetting::find();
 
         // add conditions that should always apply here
 

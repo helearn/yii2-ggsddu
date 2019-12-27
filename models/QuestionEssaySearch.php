@@ -17,7 +17,7 @@ class QuestionEssaySearch extends QuestionEssay
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'correct_answer', 'answer_process', 'knowledge_ids', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
+            [['id', 'name', 'question_stem', 'correct_answer', 'answer_process', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
         ];
     }
 
@@ -62,7 +62,6 @@ class QuestionEssaySearch extends QuestionEssay
             'question_stem' => $this->question_stem,
             'correct_answer' => $this->correct_answer,
             'answer_process' => $this->answer_process,
-            'knowledge_ids' => $this->knowledge_ids,
             'status' => $this->status,
             'created_id' => $this->created_id,
             'updated_id' => $this->updated_id,

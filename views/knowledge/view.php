@@ -7,11 +7,11 @@ use yii\widgets\DetailView;
 /* @var $model helearn\ggsddu\models\Knowledge */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Hl Knowledges'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Knowledges'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="hl-knowledge-view">
+<div class="knowledge-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

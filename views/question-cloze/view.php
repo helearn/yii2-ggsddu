@@ -7,11 +7,11 @@ use yii\widgets\DetailView;
 /* @var $model helearn\ggsddu\models\QuestionCloze */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Hl Question Clozes'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Question Clozes'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="hl-question-cloze-view">
+<div class="question-cloze-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -34,7 +34,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'question_stem',
             'correct_answer',
             'answer_process',
-            'knowledge_ids',
             'status',
             'created_id',
             'updated_id',

@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model helearn\ggsddu\models\QuestionReadStem */
+/* @var $model helearn\ggsddu\models\TestPagerSetting */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Hl Question Read Stems'), 'url' => ['index']];
+$this->title = $model->title;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Test Pager Settings'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="hl-question-read-stem-view">
+<div class="test-pager-setting-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,14 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'name',
+            'pid',
+            'type',
             'title',
-            'question_stem',
-            'status',
-            'created_id',
-            'updated_id',
-            'oid',
-            'uid',
+            'sort',
+            'default_score',
         ],
     ]) ?>
 

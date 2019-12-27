@@ -12,7 +12,6 @@ use Yii;
  * @property string $question_stem 题干
  * @property string $correct_answer 参考答案
  * @property string $answer_process 解答说明
- * @property int $knowledge_ids 知识点
  * @property int $status 状态【-1删除；0禁用；1启用】
  */
 class QuestionReadDetailed extends \yii\db\ActiveRecord
@@ -31,10 +30,9 @@ class QuestionReadDetailed extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'qid', 'question_stem', 'correct_answer', 'answer_process', 'knowledge_ids', 'status'], 'required'],
-            [['id', 'qid', 'knowledge_ids', 'status'], 'integer'],
+            [['qid', 'question_stem', 'correct_answer', 'answer_process', 'status'], 'required'],
+            [['qid', 'status'], 'integer'],
             [['question_stem', 'correct_answer', 'answer_process'], 'string'],
-            [['id'], 'unique'],
         ];
     }
 
@@ -49,7 +47,6 @@ class QuestionReadDetailed extends \yii\db\ActiveRecord
             'question_stem' => Yii::t('app', '题干'),
             'correct_answer' => Yii::t('app', '参考答案'),
             'answer_process' => Yii::t('app', '解答说明'),
-            'knowledge_ids' => Yii::t('app', '知识点'),
             'status' => Yii::t('app', '状态【-1删除；0禁用；1启用】'),
         ];
     }

@@ -5,7 +5,7 @@ namespace helearn\ggsddu\models;
 use Yii;
 
 /**
- * This is the model class for table "{{%hl_question_read_stem}}".
+ * This is the model class for table "{{%hl_question_read}}".
  *
  * @property int $id
  * @property int $name 名称【留空自动生成】
@@ -17,14 +17,14 @@ use Yii;
  * @property int $oid 原题编号
  * @property int $uid 创建者编号
  */
-class QuestionReadStem extends \yii\db\ActiveRecord
+class QuestionRead extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return '{{%hl_question_read_stem}}';
+        return '{{%hl_question_read}}';
     }
 
     /**
@@ -33,10 +33,9 @@ class QuestionReadStem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'title', 'question_stem', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'required'],
-            [['id', 'name', 'question_stem', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
+            [['name', 'title', 'question_stem', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'required'],
+            [['name', 'question_stem', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
             [['title'], 'string', 'max' => 512],
-            [['id'], 'unique'],
         ];
     }
 
@@ -60,10 +59,10 @@ class QuestionReadStem extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     * @return QuestionReadStemQuery the active query used by this AR class.
+     * @return QuestionReadQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new QuestionReadStemQuery(get_called_class());
+        return new QuestionReadQuery(get_called_class());
     }
 }

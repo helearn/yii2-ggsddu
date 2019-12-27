@@ -5,14 +5,14 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model helearn\ggsddu\models\Knowledge */
 
-$this->title = Yii::t('app', 'Update Hl Knowledge: {name}', [
+$this->title = Yii::t('app', 'Update Knowledge: {name}', [
     'name' => $model->title,
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Hl Knowledges'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Knowledges'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
-<div class="hl-knowledge-update">
+<div class="knowledge-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

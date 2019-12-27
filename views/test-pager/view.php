@@ -7,11 +7,11 @@ use yii\widgets\DetailView;
 /* @var $model helearn\ggsddu\models\TestPager */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Hl Test Pagers'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Test Pagers'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="hl-test-pager-view">
+<div class="test-pager-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

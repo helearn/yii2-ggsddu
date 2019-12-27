@@ -5,11 +5,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model helearn\ggsddu\models\QuestionCloze */
 
-$this->title = Yii::t('app', 'Create Hl Question Cloze');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Hl Question Clozes'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Question Cloze');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Question Clozes'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="hl-question-cloze-create">
+<div class="question-cloze-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

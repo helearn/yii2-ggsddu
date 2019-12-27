@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-knowledge-form">
+<div class="knowledge-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

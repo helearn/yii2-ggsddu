@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-test-pager-search">
+<div class="test-pager-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],

@@ -17,7 +17,7 @@ class QuestionChoiceSearch extends QuestionChoice
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'knowledge_ids', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
+            [['id', 'name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
         ];
     }
 
@@ -66,7 +66,6 @@ class QuestionChoiceSearch extends QuestionChoice
             'option4' => $this->option4,
             'options' => $this->options,
             'correct_options' => $this->correct_options,
-            'knowledge_ids' => $this->knowledge_ids,
             'answer_process' => $this->answer_process,
             'is_multiple' => $this->is_multiple,
             'status' => $this->status,

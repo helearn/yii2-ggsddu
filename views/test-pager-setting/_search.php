@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model helearn\ggsddu\models\TestPagerQuestionTypeSearch */
+/* @var $model helearn\ggsddu\models\TestPagerSettingSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-test-pager-question-type-search">
+<div class="test-pager-setting-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],

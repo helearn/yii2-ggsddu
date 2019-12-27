@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel helearn\ggsddu\models\TestPagerQuestionTypeSearch */
+/* @var $searchModel helearn\ggsddu\models\KnowledgeQuestionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Hl Test Pager Question Types');
+$this->title = Yii::t('app', 'Knowledge Questions');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="hl-test-pager-question-type-index">
+<div class="knowledge-question-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Hl Test Pager Question Type'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Knowledge Question'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -28,11 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'pid',
-            'type',
-            'title',
-            'sort',
-            //'default_score',
+            'question_type',
+            'question_id',
+            'knowledge_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

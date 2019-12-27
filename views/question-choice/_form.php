@@ -8,11 +8,9 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-question-choice-form">
+<div class="question-choice-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'id')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput() ?>
 
@@ -29,8 +27,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'options')->textInput() ?>
 
     <?= $form->field($model, 'correct_options')->textInput() ?>
-
-    <?= $form->field($model, 'knowledge_ids')->textInput() ?>
 
     <?= $form->field($model, 'answer_process')->textInput() ?>
 

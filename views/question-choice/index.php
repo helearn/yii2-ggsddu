@@ -7,15 +7,15 @@ use yii\widgets\Pjax;
 /* @var $searchModel helearn\ggsddu\models\QuestionChoiceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Hl Question Choices');
+$this->title = Yii::t('app', 'Question Choices');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="hl-question-choice-index">
+<div class="question-choice-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Hl Question Choice'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Question Choice'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -36,7 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
             //'option4',
             //'options',
             //'correct_options',
-            //'knowledge_ids',
             //'answer_process',
             //'is_multiple',
             //'status',

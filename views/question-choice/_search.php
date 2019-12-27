@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-question-choice-search">
+<div class="question-choice-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -35,8 +35,6 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'options') ?>
 
     <?php // echo $form->field($model, 'correct_options') ?>
-
-    <?php // echo $form->field($model, 'knowledge_ids') ?>
 
     <?php // echo $form->field($model, 'answer_process') ?>
 

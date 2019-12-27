@@ -4,12 +4,12 @@ namespace helearn\ggsddu\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use helearn\ggsddu\models\QuestionReadStem;
+use helearn\ggsddu\models\KnowledgeQuestion;
 
 /**
- * QuestionReadStemSearch represents the model behind the search form of `helearn\ggsddu\models\QuestionReadStem`.
+ * KnowledgeQuestionSearch represents the model behind the search form of `helearn\ggsddu\models\KnowledgeQuestion`.
  */
-class QuestionReadStemSearch extends QuestionReadStem
+class KnowledgeQuestionSearch extends KnowledgeQuestion
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class QuestionReadStemSearch extends QuestionReadStem
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
-            [['title'], 'safe'],
+            [['id', 'question_id', 'knowledge_id'], 'integer'],
+            [['question_type'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class QuestionReadStemSearch extends QuestionReadStem
      */
     public function search($params)
     {
-        $query = QuestionReadStem::find();
+        $query = KnowledgeQuestion::find();
 
         // add conditions that should always apply here
 
@@ -59,16 +59,11 @@ class QuestionReadStemSearch extends QuestionReadStem
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'name' => $this->name,
-            'question_stem' => $this->question_stem,
-            'status' => $this->status,
-            'created_id' => $this->created_id,
-            'updated_id' => $this->updated_id,
-            'oid' => $this->oid,
-            'uid' => $this->uid,
+            'question_id' => $this->question_id,
+            'knowledge_id' => $this->knowledge_id,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title]);
+        $query->andFilterWhere(['like', 'question_type', $this->question_type]);
 
         return $dataProvider;
     }

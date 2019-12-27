@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-question-cloze-search">
+<div class="question-cloze-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -27,8 +27,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'correct_answer') ?>
 
     <?= $form->field($model, 'answer_process') ?>
-
-    <?php // echo $form->field($model, 'knowledge_ids') ?>
 
     <?php // echo $form->field($model, 'status') ?>
 

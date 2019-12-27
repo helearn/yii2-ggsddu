@@ -12,7 +12,6 @@ use Yii;
  * @property int $question_stem 题干
  * @property int $correct_answer 正确答案
  * @property int $answer_process 解答说明
- * @property int $knowledge_ids 相关知识点
  * @property int $status 状态【-1删除；0禁用；1启用】
  * @property int $created_id 创建时间
  * @property int $updated_id 修改时间
@@ -35,9 +34,8 @@ class QuestionCompletion extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'correct_answer', 'answer_process', 'knowledge_ids', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'required'],
-            [['id', 'name', 'question_stem', 'correct_answer', 'answer_process', 'knowledge_ids', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
-            [['id'], 'unique'],
+            [['name', 'question_stem', 'correct_answer', 'answer_process', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'required'],
+            [['name', 'question_stem', 'correct_answer', 'answer_process', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
         ];
     }
 
@@ -52,7 +50,6 @@ class QuestionCompletion extends \yii\db\ActiveRecord
             'question_stem' => Yii::t('app', '题干'),
             'correct_answer' => Yii::t('app', '正确答案'),
             'answer_process' => Yii::t('app', '解答说明'),
-            'knowledge_ids' => Yii::t('app', '相关知识点'),
             'status' => Yii::t('app', '状态【-1删除；0禁用；1启用】'),
             'created_id' => Yii::t('app', '创建时间'),
             'updated_id' => Yii::t('app', '修改时间'),

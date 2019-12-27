@@ -91,8 +91,15 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
+        if (!isset(Yii::$app->i18n->translations['helearn-yii2ggsddu'])) {
+            Yii::$app->i18n->translations['helearn-yii2ggsddu'] = [
+                'class' => 'yii\i18n\PhpMessageSource',
+                'sourceLanguage' => 'zh-CN',
+                'basePath' => '@helearn/ggsddu',
+            ];
+        }
         
-        $this->basePath = '@helearn/ggsddu';
+        //$this->basePath = '@helearn/ggsddu';
        
         //echo "string";
         //exit();

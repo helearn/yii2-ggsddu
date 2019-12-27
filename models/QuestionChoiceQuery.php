@@ -3,11 +3,11 @@
 namespace helearn\ggsddu\models;
 
 /**
- * This is the ActiveQuery class for [[QuestionReadStem]].
+ * This is the ActiveQuery class for [[QuestionChoice]].
  *
- * @see QuestionReadStem
+ * @see QuestionChoice
  */
-class QuestionReadStemQuery extends \yii\db\ActiveQuery
+class QuestionChoiceQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {
@@ -16,7 +16,7 @@ class QuestionReadStemQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return QuestionReadStem[]|array
+     * @return QuestionChoice[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class QuestionReadStemQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return QuestionReadStem|array|null
+     * @return QuestionChoice|array|null
      */
     public function one($db = null)
     {

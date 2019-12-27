@@ -4,12 +4,12 @@ namespace helearn\ggsddu\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use helearn\ggsddu\models\QuestionCloze;
+use helearn\ggsddu\models\QuestionRead;
 
 /**
- * QuestionClozeSearch represents the model behind the search form of `helearn\ggsddu\models\QuestionCloze`.
+ * QuestionReadSearch represents the model behind the search form of `helearn\ggsddu\models\QuestionRead`.
  */
-class QuestionClozeSearch extends QuestionCloze
+class QuestionReadSearch extends QuestionRead
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,8 @@ class QuestionClozeSearch extends QuestionCloze
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'correct_answer', 'answer_process', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
+            [['id', 'name', 'question_stem', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
+            [['title'], 'safe'],
         ];
     }
 
@@ -39,7 +40,7 @@ class QuestionClozeSearch extends QuestionCloze
      */
     public function search($params)
     {
-        $query = QuestionCloze::find();
+        $query = QuestionRead::find();
 
         // add conditions that should always apply here
 
@@ -60,14 +61,14 @@ class QuestionClozeSearch extends QuestionCloze
             'id' => $this->id,
             'name' => $this->name,
             'question_stem' => $this->question_stem,
-            'correct_answer' => $this->correct_answer,
-            'answer_process' => $this->answer_process,
             'status' => $this->status,
             'created_id' => $this->created_id,
             'updated_id' => $this->updated_id,
             'oid' => $this->oid,
             'uid' => $this->uid,
         ]);
+
+        $query->andFilterWhere(['like', 'title', $this->title]);
 
         return $dataProvider;
     }
