@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel helearn\ggsddu\models\QuestionChoiceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Question Choices');
+$this->title = Yii::t('helearn-yii2ggsddu', 'Question Choices');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="question-choice-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Question Choice'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('helearn-yii2ggsddu', 'Create Question Choice'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -29,14 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'question_stem',
-            'option1',
-            'option2',
-            //'option3',
-            //'option4',
-            //'options',
+            'question_stem:ntext',
+            'option1:ntext',
+            'option2:ntext',
+            //'option3:ntext',
+            //'option4:ntext',
+            //'options:ntext',
             //'correct_options',
-            //'answer_process',
+            //'answer_process:ntext',
             //'is_multiple',
             //'status',
             //'created_id',

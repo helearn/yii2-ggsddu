@@ -8,10 +8,10 @@ use Yii;
  * This is the model class for table "{{%hl_question_completion}}".
  *
  * @property int $id
- * @property int $name 名称【留空自动生成】
- * @property int $question_stem 题干
- * @property int $correct_answer 正确答案
- * @property int $answer_process 解答说明
+ * @property string $name 名称【留空自动生成】
+ * @property string $question_stem 题干
+ * @property string $correct_answer 正确答案
+ * @property string $answer_process 解答说明
  * @property int $status 状态【-1删除；0禁用；1启用】
  * @property int $created_id 创建时间
  * @property int $updated_id 修改时间
@@ -35,7 +35,9 @@ class QuestionCompletion extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'question_stem', 'correct_answer', 'answer_process', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'required'],
-            [['name', 'question_stem', 'correct_answer', 'answer_process', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
+            [['question_stem', 'correct_answer', 'answer_process'], 'string'],
+            [['status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
+            [['name'], 'string', 'max' => 32],
         ];
     }
 

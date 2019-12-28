@@ -17,7 +17,8 @@ class QuestionChoiceSearch extends QuestionChoice
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
+            [['id', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
+            [['name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process'], 'safe'],
         ];
     }
 
@@ -58,15 +59,6 @@ class QuestionChoiceSearch extends QuestionChoice
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'name' => $this->name,
-            'question_stem' => $this->question_stem,
-            'option1' => $this->option1,
-            'option2' => $this->option2,
-            'option3' => $this->option3,
-            'option4' => $this->option4,
-            'options' => $this->options,
-            'correct_options' => $this->correct_options,
-            'answer_process' => $this->answer_process,
             'is_multiple' => $this->is_multiple,
             'status' => $this->status,
             'created_id' => $this->created_id,
@@ -74,6 +66,16 @@ class QuestionChoiceSearch extends QuestionChoice
             'oid' => $this->oid,
             'uid' => $this->uid,
         ]);
+
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'question_stem', $this->question_stem])
+            ->andFilterWhere(['like', 'option1', $this->option1])
+            ->andFilterWhere(['like', 'option2', $this->option2])
+            ->andFilterWhere(['like', 'option3', $this->option3])
+            ->andFilterWhere(['like', 'option4', $this->option4])
+            ->andFilterWhere(['like', 'options', $this->options])
+            ->andFilterWhere(['like', 'correct_options', $this->correct_options])
+            ->andFilterWhere(['like', 'answer_process', $this->answer_process]);
 
         return $dataProvider;
     }

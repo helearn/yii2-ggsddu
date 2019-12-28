@@ -17,7 +17,8 @@ class QuestionEssaySearch extends QuestionEssay
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'correct_answer', 'answer_process', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
+            [['id', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
+            [['name', 'question_stem', 'correct_answer', 'answer_process'], 'safe'],
         ];
     }
 
@@ -58,16 +59,17 @@ class QuestionEssaySearch extends QuestionEssay
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'name' => $this->name,
-            'question_stem' => $this->question_stem,
-            'correct_answer' => $this->correct_answer,
-            'answer_process' => $this->answer_process,
             'status' => $this->status,
             'created_id' => $this->created_id,
             'updated_id' => $this->updated_id,
             'oid' => $this->oid,
             'uid' => $this->uid,
         ]);
+
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'question_stem', $this->question_stem])
+            ->andFilterWhere(['like', 'correct_answer', $this->correct_answer])
+            ->andFilterWhere(['like', 'answer_process', $this->answer_process]);
 
         return $dataProvider;
     }

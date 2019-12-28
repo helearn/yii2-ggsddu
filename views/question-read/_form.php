@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\ckeditor\CKEditor;
+use kartik\date\DatePicker;//如果没有date类型字段，请删除本行
+use kartik\datetime\DateTimePicker;//如果没有datetime类型字段，请删除本行
 
 /* @var $this yii\web\View */
 /* @var $model helearn\ggsddu\models\QuestionRead */
@@ -12,17 +15,17 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput() ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'title')->widget(CKEditor::className(), ['options' => ['rows' => 6], 'preset' => 'basic' ]) ?>
 
-    <?= $form->field($model, 'question_stem')->textInput() ?>
+    <?= $form->field($model, 'question_stem')->widget(CKEditor::className(), ['options' => ['rows' => 6], 'preset' => 'basic' ]) ?>
 
     <?= $form->field($model, 'status')->textInput() ?>
 
-    <?= $form->field($model, 'created_id')->textInput() ?>
+    <?= $form->field($model, 'created_at')->widget(DateTimePicker::classname(), ['options' => ['placeholder' => ''],'pluginOptions' => [ 'autoclose' => true, 'todayHighlight' => true]]) ?>
 
-    <?= $form->field($model, 'updated_id')->textInput() ?>
+    <?= $form->field($model, 'updated_at')->widget(DateTimePicker::classname(), ['options' => ['placeholder' => ''],'pluginOptions' => [ 'autoclose' => true, 'todayHighlight' => true]]) ?>
 
     <?= $form->field($model, 'oid')->textInput() ?>
 

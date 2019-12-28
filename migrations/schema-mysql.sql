@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2019-12-27 10:36:00
+-- Generation Time: 2019-12-27 20:34:13
 -- 服务器版本： 5.7.28-log
 -- PHP Version: 7.2.26
 
@@ -36,7 +36,7 @@ CREATE TABLE `hl_knowledge` (
   `level` int(11) NOT NULL COMMENT '级别',
   `is_menu` tinyint(1) NOT NULL COMMENT '是否菜单',
   `sort` int(11) NOT NULL COMMENT '排序',
-  `status` int(11) NOT NULL COMMENT '状态（-1删除；0禁用；1启用）',
+  `status` tinyint(4) NOT NULL COMMENT '状态（-1删除；0禁用；1启用）',
   `created_at` int(11) NOT NULL COMMENT '创建时间',
   `updated_at` int(11) NOT NULL COMMENT '修改时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -48,7 +48,6 @@ CREATE TABLE `hl_knowledge` (
 --
 
 CREATE TABLE `hl_knowledge_question` (
-  `id` int(11) NOT NULL,
   `question_type` varchar(32) NOT NULL,
   `question_id` int(11) NOT NULL,
   `knowledge_id` int(11) NOT NULL
@@ -62,16 +61,16 @@ CREATE TABLE `hl_knowledge_question` (
 
 CREATE TABLE `hl_question_choice` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL COMMENT '名称（留空自动生成）',
-  `question_stem` int(11) NOT NULL COMMENT '题干',
-  `option1` int(11) NOT NULL COMMENT '选项1',
-  `option2` int(11) NOT NULL COMMENT '选项2',
-  `option3` int(11) NOT NULL COMMENT '选项3',
-  `option4` int(11) NOT NULL COMMENT '选项4',
-  `options` int(11) NOT NULL COMMENT '其他选项【以|#|分割每个选项】',
-  `correct_options` int(11) NOT NULL COMMENT '正确选项',
-  `answer_process` int(11) NOT NULL COMMENT '解答说明',
-  `is_multiple` int(11) NOT NULL COMMENT '是否多选题',
+  `name` varchar(32) NOT NULL COMMENT '名称（留空自动生成）',
+  `question_stem` text NOT NULL COMMENT '题干',
+  `option1` text NOT NULL COMMENT '选项1',
+  `option2` text NOT NULL COMMENT '选项2',
+  `option3` text NOT NULL COMMENT '选项3',
+  `option4` text NOT NULL COMMENT '选项4',
+  `options` text NOT NULL COMMENT '其他选项【以|#|分割每个选项】',
+  `correct_options` varchar(32) NOT NULL COMMENT '正确选项',
+  `answer_process` text NOT NULL COMMENT '解答说明',
+  `is_multiple` tinyint(1) NOT NULL COMMENT '是否多选题',
   `status` int(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
   `created_id` int(11) NOT NULL COMMENT '创建时间',
   `updated_at` int(11) NOT NULL COMMENT '更新时间',
@@ -87,11 +86,11 @@ CREATE TABLE `hl_question_choice` (
 
 CREATE TABLE `hl_question_cloze` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL COMMENT '名称【留空自动生成】',
-  `question_stem` int(11) NOT NULL COMMENT '题干',
-  `correct_answer` int(11) NOT NULL COMMENT '正确答案【以|#|分割每个填空】',
-  `answer_process` int(11) NOT NULL COMMENT '解答说明',
-  `status` int(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
+  `name` varchar(32) NOT NULL COMMENT '名称【留空自动生成】',
+  `question_stem` text NOT NULL COMMENT '题干',
+  `correct_answer` text NOT NULL COMMENT '正确答案【以|#|分割每个填空】',
+  `answer_process` text NOT NULL COMMENT '解答说明',
+  `status` tinyint(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
   `created_id` int(11) NOT NULL COMMENT '创建时间',
   `updated_id` int(11) NOT NULL COMMENT '修改时间',
   `oid` int(11) NOT NULL COMMENT '原题编号',
@@ -106,11 +105,11 @@ CREATE TABLE `hl_question_cloze` (
 
 CREATE TABLE `hl_question_completion` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL COMMENT '名称【留空自动生成】',
-  `question_stem` int(11) NOT NULL COMMENT '题干',
-  `correct_answer` int(11) NOT NULL COMMENT '正确答案',
-  `answer_process` int(11) NOT NULL COMMENT '解答说明',
-  `status` int(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
+  `name` varchar(32) NOT NULL COMMENT '名称【留空自动生成】',
+  `question_stem` text NOT NULL COMMENT '题干',
+  `correct_answer` text NOT NULL COMMENT '正确答案',
+  `answer_process` text NOT NULL COMMENT '解答说明',
+  `status` tinyint(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
   `created_id` int(11) NOT NULL COMMENT '创建时间',
   `updated_id` int(11) NOT NULL COMMENT '修改时间',
   `oid` int(11) NOT NULL COMMENT '原题编号',
@@ -125,16 +124,34 @@ CREATE TABLE `hl_question_completion` (
 
 CREATE TABLE `hl_question_essay` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL COMMENT '名称【留空自动生成】',
-  `question_stem` int(11) NOT NULL COMMENT '题干',
-  `correct_answer` int(11) NOT NULL COMMENT '参考答案',
-  `answer_process` int(11) NOT NULL COMMENT '解答说明',
-  `status` int(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
+  `name` varchar(32) NOT NULL COMMENT '名称【留空自动生成】',
+  `question_stem` text NOT NULL COMMENT '题干',
+  `correct_answer` text NOT NULL COMMENT '参考答案',
+  `answer_process` text NOT NULL COMMENT '解答说明',
+  `status` tinyint(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
   `created_id` int(11) NOT NULL COMMENT '创建时间',
   `updated_id` int(11) NOT NULL COMMENT '修改时间',
   `oid` int(11) NOT NULL COMMENT '原题编号',
   `uid` int(11) NOT NULL COMMENT '创建者编号'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='数学解答题，作文';
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `hl_question_read`
+--
+
+CREATE TABLE `hl_question_read` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL COMMENT '名称【留空自动生成】',
+  `title` text NOT NULL COMMENT '标题',
+  `question_stem` text NOT NULL COMMENT '题干',
+  `status` tinyint(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
+  `created_id` int(11) NOT NULL COMMENT '创建时间',
+  `updated_id` int(11) NOT NULL COMMENT '修改时间',
+  `oid` int(11) NOT NULL COMMENT '原题编号',
+  `uid` int(11) NOT NULL COMMENT '创建者编号'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='语文阅读理解题';
 
 -- --------------------------------------------------------
 
@@ -154,33 +171,15 @@ CREATE TABLE `hl_question_read_detailed` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `hl_question_read_stem`
---
-
-CREATE TABLE `hl_question_read_stem` (
-  `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL COMMENT '名称【留空自动生成】',
-  `title` varchar(512) NOT NULL COMMENT '标题',
-  `question_stem` int(11) NOT NULL COMMENT '题干',
-  `status` int(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
-  `created_id` int(11) NOT NULL COMMENT '创建时间',
-  `updated_id` int(11) NOT NULL COMMENT '修改时间',
-  `oid` int(11) NOT NULL COMMENT '原题编号',
-  `uid` int(11) NOT NULL COMMENT '创建者编号'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='语文阅读理解题';
-
--- --------------------------------------------------------
-
---
 -- 表的结构 `hl_test_pager`
 --
 
 CREATE TABLE `hl_test_pager` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL COMMENT '名称【留空自动生成】',
-  `title` int(11) NOT NULL COMMENT '试卷标题',
-  `explanation` int(11) NOT NULL COMMENT '试卷说明',
-  `status` int(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
+  `name` varchar(32) NOT NULL COMMENT '名称【留空自动生成】',
+  `title` varchar(64) NOT NULL COMMENT '试卷标题',
+  `explanation` text NOT NULL COMMENT '试卷说明',
+  `status` tinyint(11) NOT NULL COMMENT '状态【-1删除；0禁用；1启用】',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
   `start_at` int(11) NOT NULL COMMENT '测试开始时间',
@@ -198,8 +197,8 @@ CREATE TABLE `hl_test_pager` (
 CREATE TABLE `hl_test_pager_setting` (
   `id` int(11) NOT NULL,
   `pid` int(11) NOT NULL COMMENT '试卷编号',
-  `type` int(11) NOT NULL COMMENT '题型【choice;completion;cloze;read;essay】',
-  `title` int(11) NOT NULL COMMENT '题型标题',
+  `type` varchar(32) NOT NULL COMMENT '题型【choice;completion;cloze;read;essay】',
+  `title` varchar(64) NOT NULL COMMENT '题型标题',
   `sort` int(11) NOT NULL COMMENT '卷中排序',
   `default_score` int(11) NOT NULL COMMENT '默认每题分值'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -218,7 +217,6 @@ ALTER TABLE `hl_knowledge`
 -- Indexes for table `hl_knowledge_question`
 --
 ALTER TABLE `hl_knowledge_question`
-  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `question_type` (`question_type`,`question_id`,`knowledge_id`);
 
 --
@@ -246,15 +244,15 @@ ALTER TABLE `hl_question_essay`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hl_question_read_detailed`
+-- Indexes for table `hl_question_read`
 --
-ALTER TABLE `hl_question_read_detailed`
+ALTER TABLE `hl_question_read`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hl_question_read_stem`
+-- Indexes for table `hl_question_read_detailed`
 --
-ALTER TABLE `hl_question_read_stem`
+ALTER TABLE `hl_question_read_detailed`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -277,12 +275,6 @@ ALTER TABLE `hl_test_pager_setting`
 -- 使用表AUTO_INCREMENT `hl_knowledge`
 --
 ALTER TABLE `hl_knowledge`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- 使用表AUTO_INCREMENT `hl_knowledge_question`
---
-ALTER TABLE `hl_knowledge_question`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -310,15 +302,15 @@ ALTER TABLE `hl_question_essay`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `hl_question_read_detailed`
+-- 使用表AUTO_INCREMENT `hl_question_read`
 --
-ALTER TABLE `hl_question_read_detailed`
+ALTER TABLE `hl_question_read`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `hl_question_read_stem`
+-- 使用表AUTO_INCREMENT `hl_question_read_detailed`
 --
-ALTER TABLE `hl_question_read_stem`
+ALTER TABLE `hl_question_read_detailed`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

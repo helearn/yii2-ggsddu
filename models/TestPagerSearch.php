@@ -17,7 +17,8 @@ class TestPagerSearch extends TestPager
     public function rules()
     {
         return [
-            [['id', 'name', 'title', 'explanation', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'integer'],
+            [['id', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'integer'],
+            [['name', 'title', 'explanation'], 'safe'],
         ];
     }
 
@@ -58,9 +59,6 @@ class TestPagerSearch extends TestPager
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'name' => $this->name,
-            'title' => $this->title,
-            'explanation' => $this->explanation,
             'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
@@ -69,6 +67,10 @@ class TestPagerSearch extends TestPager
             'oid' => $this->oid,
             'uid' => $this->uid,
         ]);
+
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'explanation', $this->explanation]);
 
         return $dataProvider;
     }

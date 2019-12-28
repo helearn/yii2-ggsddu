@@ -17,7 +17,7 @@ class QuestionReadDetailedSearch extends QuestionReadDetailed
     public function rules()
     {
         return [
-            [['id', 'qid', 'knowledge_ids', 'status'], 'integer'],
+            [['id', 'qid', 'status'], 'integer'],
             [['question_stem', 'correct_answer', 'answer_process'], 'safe'],
         ];
     }
@@ -60,7 +60,6 @@ class QuestionReadDetailedSearch extends QuestionReadDetailed
         $query->andFilterWhere([
             'id' => $this->id,
             'qid' => $this->qid,
-            'knowledge_ids' => $this->knowledge_ids,
             'status' => $this->status,
         ]);
 

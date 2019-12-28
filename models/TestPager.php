@@ -8,9 +8,9 @@ use Yii;
  * This is the model class for table "{{%hl_test_pager}}".
  *
  * @property int $id
- * @property int $name 名称【留空自动生成】
- * @property int $title 试卷标题
- * @property int $explanation 试卷说明
+ * @property string $name 名称【留空自动生成】
+ * @property string $title 试卷标题
+ * @property string $explanation 试卷说明
  * @property int $status 状态【-1删除；0禁用；1启用】
  * @property int $created_at
  * @property int $updated_at
@@ -36,7 +36,10 @@ class TestPager extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'title', 'explanation', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'required'],
-            [['name', 'title', 'explanation', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'integer'],
+            [['explanation'], 'string'],
+            [['status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'integer'],
+            [['name'], 'string', 'max' => 32],
+            [['title'], 'string', 'max' => 64],
         ];
     }
 

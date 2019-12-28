@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Question Completion'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('helearn-yii2ggsddu', 'Create Question Completion'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'question_stem',
-            'correct_answer',
-            'answer_process',
+            'question_stem:ntext',
+            'correct_answer:ntext',
+            'answer_process:ntext',
             //'status',
             //'created_id',
             //'updated_id',

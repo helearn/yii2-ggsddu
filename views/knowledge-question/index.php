@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel helearn\ggsddu\models\KnowledgeQuestionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Knowledge Questions');
+$this->title = Yii::t('helearn-yii2ggsddu', 'Knowledge Questions');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="knowledge-question-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Knowledge Question'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('helearn-yii2ggsddu', 'Create Knowledge Question'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -27,7 +27,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'question_type',
             'question_id',
             'knowledge_id',

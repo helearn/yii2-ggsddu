@@ -7,15 +7,15 @@ use yii\widgets\Pjax;
 /* @var $searchModel helearn\ggsddu\models\QuestionReadDetailedSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Hl Question Read Detaileds');
+$this->title = Yii::t('helearn-yii2ggsddu', 'Question Read Detaileds');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="hl-question-read-detailed-index">
+<div class="question-read-detailed-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Hl Question Read Detailed'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('helearn-yii2ggsddu', 'Create Question Read Detailed'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -32,7 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'question_stem:ntext',
             'correct_answer:ntext',
             'answer_process:ntext',
-            //'knowledge_ids',
             //'status',
 
             ['class' => 'yii\grid\ActionColumn'],

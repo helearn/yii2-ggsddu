@@ -5,12 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model helearn\ggsddu\models\TestPager */
 
-$this->title = Yii::t('app', 'Update Test Pager: {name}', [
+$this->title = Yii::t('helearn-yii2ggsddu', 'Update Test Pager: {name}', [
     'name' => $model->name,
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Test Pagers'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('helearn-yii2ggsddu', 'Test Pagers'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['breadcrumbs'][] = Yii::t('helearn-yii2ggsddu', 'Update');
 ?>
 <div class="test-pager-update">
 

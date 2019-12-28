@@ -8,15 +8,15 @@ use Yii;
  * This is the model class for table "{{%hl_question_choice}}".
  *
  * @property int $id
- * @property int $name 名称（留空自动生成）
- * @property int $question_stem 题干
- * @property int $option1 选项1
- * @property int $option2 选项2
- * @property int $option3 选项3
- * @property int $option4 选项4
- * @property int $options 其他选项【以|#|分割每个选项】
- * @property int $correct_options 正确选项
- * @property int $answer_process 解答说明
+ * @property string $name 名称（留空自动生成）
+ * @property string $question_stem 题干
+ * @property string $option1 选项1
+ * @property string $option2 选项2
+ * @property string $option3 选项3
+ * @property string $option4 选项4
+ * @property string $options 其他选项【以|#|分割每个选项】
+ * @property string $correct_options 正确选项
+ * @property string $answer_process 解答说明
  * @property int $is_multiple 是否多选题
  * @property int $status 状态【-1删除；0禁用；1启用】
  * @property int $created_id 创建时间
@@ -41,7 +41,9 @@ class QuestionChoice extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'required'],
-            [['name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
+            [['question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'answer_process'], 'string'],
+            [['is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
+            [['name', 'correct_options'], 'string', 'max' => 32],
         ];
     }
 

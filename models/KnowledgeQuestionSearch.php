@@ -17,8 +17,8 @@ class KnowledgeQuestionSearch extends KnowledgeQuestion
     public function rules()
     {
         return [
-            [['id', 'question_id', 'knowledge_id'], 'integer'],
             [['question_type'], 'safe'],
+            [['question_id', 'knowledge_id'], 'integer'],
         ];
     }
 
@@ -58,7 +58,6 @@ class KnowledgeQuestionSearch extends KnowledgeQuestion
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
             'question_id' => $this->question_id,
             'knowledge_id' => $this->knowledge_id,
         ]);

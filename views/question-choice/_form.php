@@ -12,23 +12,23 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput() ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'question_stem')->textInput() ?>
+    <?= $form->field($model, 'question_stem')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'option1')->textInput() ?>
+    <?= $form->field($model, 'option1')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'option2')->textInput() ?>
+    <?= $form->field($model, 'option2')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'option3')->textInput() ?>
+    <?= $form->field($model, 'option3')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'option4')->textInput() ?>
+    <?= $form->field($model, 'option4')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'options')->textInput() ?>
+    <?= $form->field($model, 'options')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'correct_options')->textInput() ?>
+    <?= $form->field($model, 'correct_options')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'answer_process')->textInput() ?>
+    <?= $form->field($model, 'answer_process')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'is_multiple')->textInput() ?>
 
@@ -43,7 +43,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'uid')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton(Yii::t('helearn-yii2ggsddu', 'Save'), ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

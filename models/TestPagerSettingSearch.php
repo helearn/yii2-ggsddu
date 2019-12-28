@@ -17,7 +17,8 @@ class TestPagerSettingSearch extends TestPagerSetting
     public function rules()
     {
         return [
-            [['id', 'pid', 'type', 'title', 'sort', 'default_score'], 'integer'],
+            [['id', 'pid', 'sort', 'default_score'], 'integer'],
+            [['type', 'title'], 'safe'],
         ];
     }
 
@@ -59,11 +60,12 @@ class TestPagerSettingSearch extends TestPagerSetting
         $query->andFilterWhere([
             'id' => $this->id,
             'pid' => $this->pid,
-            'type' => $this->type,
-            'title' => $this->title,
             'sort' => $this->sort,
             'default_score' => $this->default_score,
         ]);
+
+        $query->andFilterWhere(['like', 'type', $this->type])
+            ->andFilterWhere(['like', 'title', $this->title]);
 
         return $dataProvider;
     }

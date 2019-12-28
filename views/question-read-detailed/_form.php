@@ -8,11 +8,9 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="hl-question-read-detailed-form">
+<div class="question-read-detailed-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'id')->textInput() ?>
 
     <?= $form->field($model, 'qid')->textInput() ?>
 
@@ -22,12 +20,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'answer_process')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'knowledge_ids')->textInput() ?>
-
     <?= $form->field($model, 'status')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton(Yii::t('helearn-yii2ggsddu', 'Save'), ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

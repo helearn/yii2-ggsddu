@@ -94,7 +94,7 @@ class Module extends \yii\base\Module
         if (!isset(Yii::$app->i18n->translations['helearn-yii2ggsddu'])) {
             Yii::$app->i18n->translations['helearn-yii2ggsddu'] = [
                 'class' => 'yii\i18n\PhpMessageSource',
-                'sourceLanguage' => 'zh-CN',
+                'sourceLanguage' => 'en',
                 'basePath' => '@helearn/ggsddu',
             ];
         }

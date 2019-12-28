@@ -5,12 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model helearn\ggsddu\models\KnowledgeQuestion */
 
-$this->title = Yii::t('app', 'Update Knowledge Question: {name}', [
-    'name' => $model->id,
+$this->title = Yii::t('helearn-yii2ggsddu', 'Update Knowledge Question: {name}', [
+    'name' => $model->question_type,
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Knowledge Questions'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('helearn-yii2ggsddu', 'Knowledge Questions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->question_type, 'url' => ['view', 'question_type' => $model->question_type, 'question_id' => $model->question_id, 'knowledge_id' => $model->knowledge_id]];
+$this->params['breadcrumbs'][] = Yii::t('helearn-yii2ggsddu', 'Update');
 ?>
 <div class="knowledge-question-update">
 

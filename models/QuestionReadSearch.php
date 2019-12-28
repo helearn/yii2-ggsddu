@@ -17,8 +17,8 @@ class QuestionReadSearch extends QuestionRead
     public function rules()
     {
         return [
-            [['id', 'name', 'question_stem', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
-            [['title'], 'safe'],
+            [['id', 'status', 'oid', 'uid'], 'integer'],
+            [['name', 'title', 'question_stem', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -59,16 +59,16 @@ class QuestionReadSearch extends QuestionRead
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'name' => $this->name,
-            'question_stem' => $this->question_stem,
             'status' => $this->status,
-            'created_id' => $this->created_id,
-            'updated_id' => $this->updated_id,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'oid' => $this->oid,
             'uid' => $this->uid,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'question_stem', $this->question_stem]);
 
         return $dataProvider;
     }

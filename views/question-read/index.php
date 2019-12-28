@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'title',
-            'question_stem',
+            'title:html',
+            'question_stem:html',
             'status',
-            //'created_id',
-            //'updated_id',
+            //'created_at:datetime',
+            //'updated_at:datetime',
             //'oid',
             //'uid',
 
