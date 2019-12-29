@@ -9,14 +9,15 @@ use Yii;
  *
  * @property int $id
  * @property string $name 名称【留空自动生成】
- * @property string $question_stem 题干
+ * @property string $question_stem 写作题、解答题
  * @property string $correct_answer 参考答案
- * @property string $answer_process 解答说明
+ * @property string|null $answer_process 解答说明
  * @property int $status 状态【-1删除；0禁用；1启用】
  * @property int $created_id 创建时间
  * @property int $updated_id 修改时间
- * @property int $oid 原题编号
- * @property int $uid 创建者编号
+ * @property string|null $oqtype 原题题型[chioce,cloze,completion,essay,read]
+ * @property int|null $oqid 原题编号
+ * @property int|null $user_id 创建者编号
  */
 class QuestionEssay extends \yii\db\ActiveRecord
 {
@@ -34,10 +35,10 @@ class QuestionEssay extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'question_stem', 'correct_answer', 'answer_process', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'required'],
+            [['name', 'question_stem', 'correct_answer', 'created_id', 'updated_id'], 'required'],
             [['question_stem', 'correct_answer', 'answer_process'], 'string'],
-            [['status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
-            [['name'], 'string', 'max' => 32],
+            [['status', 'created_id', 'updated_id', 'oqid', 'user_id'], 'integer'],
+            [['name', 'oqtype'], 'string', 'max' => 32],
         ];
     }
 
@@ -48,15 +49,16 @@ class QuestionEssay extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'name' => Yii::t('app', '名称【留空自动生成】'),
-            'question_stem' => Yii::t('app', '题干'),
-            'correct_answer' => Yii::t('app', '参考答案'),
-            'answer_process' => Yii::t('app', '解答说明'),
-            'status' => Yii::t('app', '状态【-1删除；0禁用；1启用】'),
-            'created_id' => Yii::t('app', '创建时间'),
-            'updated_id' => Yii::t('app', '修改时间'),
-            'oid' => Yii::t('app', '原题编号'),
-            'uid' => Yii::t('app', '创建者编号'),
+            'name' => Yii::t('app', 'Name'),
+            'question_stem' => Yii::t('app', 'Question Stem'),
+            'correct_answer' => Yii::t('app', 'Correct Answer'),
+            'answer_process' => Yii::t('app', 'Answer Process'),
+            'status' => Yii::t('app', 'Status'),
+            'created_id' => Yii::t('app', 'Created ID'),
+            'updated_id' => Yii::t('app', 'Updated ID'),
+            'oqtype' => Yii::t('app', 'Oqtype'),
+            'oqid' => Yii::t('app', 'Oqid'),
+            'user_id' => Yii::t('app', 'User ID'),
         ];
     }
 

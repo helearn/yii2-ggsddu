@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model helearn\ggsddu\models\QuestionRead */
 
-$this->title = Yii::t('app', 'Create Question Read');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Question Reads'), 'url' => ['index']];
+$this->title = Yii::t('helearn-yii2ggsddu', 'Create Question Read');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('helearn-yii2ggsddu', 'Question Reads'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="question-read-create">

@@ -95,7 +95,7 @@ class Module extends \yii\base\Module
             Yii::$app->i18n->translations['helearn-yii2ggsddu'] = [
                 'class' => 'yii\i18n\PhpMessageSource',
                 'sourceLanguage' => 'en',
-                'basePath' => '@helearn/ggsddu',
+                'basePath' => '@helearn/ggsddu/messages',
             ];
         }
         
@@ -124,11 +124,11 @@ class Module extends \yii\base\Module
             ];
             foreach ($this->_coreItems as $id => $lable) {
                 if (!isset($conditions[$id]) || $conditions[$id]) {
-                    $this->_normalizeMenus[$id] = ['label' => Yii::t('rbac-admin', $lable), 'url' => [$mid . $id]];
+                    $this->_normalizeMenus[$id] = ['label' => Yii::t('helearn-yii2ggsddu', $lable), 'url' => [$mid . $id]];
                 }
             }
             foreach (array_keys($this->controllerMap) as $id) {
-                $this->_normalizeMenus[$id] = ['label' => Yii::t('rbac-admin', Inflector::humanize($id)), 'url' => [$mid . $id]];
+                $this->_normalizeMenus[$id] = ['label' => Yii::t('helearn-yii2ggsddu', Inflector::humanize($id)), 'url' => [$mid . $id]];
             }
 
             // user configure menus

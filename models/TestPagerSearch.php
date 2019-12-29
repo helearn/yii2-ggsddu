@@ -17,8 +17,8 @@ class TestPagerSearch extends TestPager
     public function rules()
     {
         return [
-            [['id', 'status', 'created_at', 'updated_at', 'start_at', 'end_at', 'oid', 'uid'], 'integer'],
-            [['name', 'title', 'explanation'], 'safe'],
+            [['id', 'status', 'share_level', 'otpid', 'user_id'], 'integer'],
+            [['name', 'title', 'explanation', 'created_at', 'updated_at', 'start_at', 'end_at'], 'safe'],
         ];
     }
 
@@ -64,8 +64,9 @@ class TestPagerSearch extends TestPager
             'updated_at' => $this->updated_at,
             'start_at' => $this->start_at,
             'end_at' => $this->end_at,
-            'oid' => $this->oid,
-            'uid' => $this->uid,
+            'share_level' => $this->share_level,
+            'otpid' => $this->otpid,
+            'user_id' => $this->user_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

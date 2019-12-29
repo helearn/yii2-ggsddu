@@ -16,8 +16,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Knowledge' => '知识点',
-    'Question Essays' => '写作解答题',
-    'Question Completions' => '填空题',
-    'Question Stem' => '题干',
+    'Knowledge' => 'Knowledge',
+    'Question Essays' => 'Question Essays',
+    'Question Completions' => 'Question Completions',
+    'Question Stem' => 'uestion Stem',
 ];

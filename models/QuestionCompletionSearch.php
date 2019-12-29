@@ -17,8 +17,8 @@ class QuestionCompletionSearch extends QuestionCompletion
     public function rules()
     {
         return [
-            [['id', 'status', 'created_id', 'updated_id', 'oid', 'uid'], 'integer'],
-            [['name', 'question_stem', 'correct_answer', 'answer_process'], 'safe'],
+            [['id', 'status', 'created_id', 'updated_id', 'oqid', 'user_id'], 'integer'],
+            [['name', 'question_stem', 'correct_answer', 'answer_process', 'oqtype'], 'safe'],
         ];
     }
 
@@ -62,14 +62,15 @@ class QuestionCompletionSearch extends QuestionCompletion
             'status' => $this->status,
             'created_id' => $this->created_id,
             'updated_id' => $this->updated_id,
-            'oid' => $this->oid,
-            'uid' => $this->uid,
+            'oqid' => $this->oqid,
+            'user_id' => $this->user_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'question_stem', $this->question_stem])
             ->andFilterWhere(['like', 'correct_answer', $this->correct_answer])
-            ->andFilterWhere(['like', 'answer_process', $this->answer_process]);
+            ->andFilterWhere(['like', 'answer_process', $this->answer_process])
+            ->andFilterWhere(['like', 'oqtype', $this->oqtype]);
 
         return $dataProvider;
     }

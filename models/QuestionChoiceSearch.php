@@ -17,8 +17,8 @@ class QuestionChoiceSearch extends QuestionChoice
     public function rules()
     {
         return [
-            [['id', 'is_multiple', 'status', 'created_id', 'updated_at', 'oid', 'uid'], 'integer'],
-            [['name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process'], 'safe'],
+            [['id', 'is_multiple', 'status', 'oqid', 'user_id'], 'integer'],
+            [['name', 'question_stem', 'option1', 'option2', 'option3', 'option4', 'options', 'correct_options', 'answer_process', 'created_at', 'updated_at', 'oqtype'], 'safe'],
         ];
     }
 
@@ -61,10 +61,10 @@ class QuestionChoiceSearch extends QuestionChoice
             'id' => $this->id,
             'is_multiple' => $this->is_multiple,
             'status' => $this->status,
-            'created_id' => $this->created_id,
+            'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'oid' => $this->oid,
-            'uid' => $this->uid,
+            'oqid' => $this->oqid,
+            'user_id' => $this->user_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
@@ -75,7 +75,8 @@ class QuestionChoiceSearch extends QuestionChoice
             ->andFilterWhere(['like', 'option4', $this->option4])
             ->andFilterWhere(['like', 'options', $this->options])
             ->andFilterWhere(['like', 'correct_options', $this->correct_options])
-            ->andFilterWhere(['like', 'answer_process', $this->answer_process]);
+            ->andFilterWhere(['like', 'answer_process', $this->answer_process])
+            ->andFilterWhere(['like', 'oqtype', $this->oqtype]);
 
         return $dataProvider;
     }

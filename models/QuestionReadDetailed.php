@@ -11,8 +11,8 @@ use Yii;
  * @property int $qid 父级id
  * @property string $question_stem 题干
  * @property string $correct_answer 参考答案
- * @property string $answer_process 解答说明
- * @property int $status 状态【-1删除；0禁用；1启用】
+ * @property string|null $answer_process 解答说明
+ * @property int|null $status 状态【-1删除；0禁用；1启用】
  */
 class QuestionReadDetailed extends \yii\db\ActiveRecord
 {
@@ -30,7 +30,7 @@ class QuestionReadDetailed extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['qid', 'question_stem', 'correct_answer', 'answer_process', 'status'], 'required'],
+            [['qid', 'question_stem', 'correct_answer'], 'required'],
             [['qid', 'status'], 'integer'],
             [['question_stem', 'correct_answer', 'answer_process'], 'string'],
         ];
@@ -43,11 +43,11 @@ class QuestionReadDetailed extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'qid' => Yii::t('app', '父级id'),
-            'question_stem' => Yii::t('app', '题干'),
-            'correct_answer' => Yii::t('app', '参考答案'),
-            'answer_process' => Yii::t('app', '解答说明'),
-            'status' => Yii::t('app', '状态【-1删除；0禁用；1启用】'),
+            'qid' => Yii::t('app', 'Qid'),
+            'question_stem' => Yii::t('app', 'Question Stem'),
+            'correct_answer' => Yii::t('app', 'Correct Answer'),
+            'answer_process' => Yii::t('app', 'Answer Process'),
+            'status' => Yii::t('app', 'Status'),
         ];
     }
 
