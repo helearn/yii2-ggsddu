@@ -3,11 +3,11 @@
 namespace helearn\ggsddu\models;
 
 /**
- * This is the ActiveQuery class for [[User]].
+ * This is the ActiveQuery class for [[HlQuestionChoice]].
  *
- * @see User
+ * @see HlQuestionChoice
  */
-class UserQuery extends \yii\db\ActiveQuery
+class HlQuestionChoiceQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {
@@ -16,7 +16,7 @@ class UserQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return User[]|array
+     * @return HlQuestionChoice[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class UserQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return User|array|null
+     * @return HlQuestionChoice|array|null
      */
     public function one($db = null)
     {
